@@ -11,6 +11,9 @@
 
 using namespace std;
 
+
+
+
 class D
 {
 public:
@@ -85,10 +88,34 @@ public:
 
 };
 
+class Foo {
+
+    B b;
+    A a;
+
+public:
+
+    Foo() {
+            cout<<"Init Foo"<<endl;
+          }
+
+    ~Foo(){
+            cout<<"Destroy Foo"<<endl;
+          }
+};
+
 
 
 int main()
 {
+    uint32_t count=0;
+
+    cout<<"\nUC"<<count++<<" Member variable init"<<endl;
+    {
+        Foo val;
+    }
+
+    cout<<"\nUC"<<count++<<" Object variable init"<<endl;
 	B b;
 	A a;
 
