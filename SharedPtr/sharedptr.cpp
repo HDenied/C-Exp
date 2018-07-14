@@ -30,9 +30,10 @@ public:
 
 int main()
 {
+    uint32_t count=0;
     std::shared_ptr<int> integral;
 
-    std::cout<<"\nUC0 - Init and reset pointers:"<<std::endl;
+    std::cout<<"\nUC"<<count++<<" - Init and reset pointers:"<<std::endl;
 
     std::shared_ptr<int> test(new int(4));
 
@@ -50,7 +51,7 @@ int main()
 
 
 
-    std::cout<<"\nUC1 - alias constructor out of scope:"<<std::endl;
+    std::cout<<"\nUC"<<count++<<" - alias constructor out of scope:"<<std::endl;
     std::shared_ptr<int> integral2;
     {
 
@@ -81,7 +82,7 @@ int main()
     std::cout<<"Value of Foo2 out of scope but because of the alias constructor is still preserved in integral2 and is: "<<*integral2<<", num references is: "<< integral2.use_count()<<std::endl;
     std::cout << "Value of integral is still valid because is not out of scope and is: " << *integral<<", num references is: "<< integral.use_count()<<std::endl;
 
-    std::cout<<"\nUC2 - fetching naked/raw pointer:"<<std::endl;
+    std::cout<<"\nUC"<<count++<<"  - fetching naked/raw pointer:"<<std::endl;
 
     /*In this case the variable must be deallocated because data is not stored inside the integral object but just referred, obviously it can't be referred anymore */
     std::cout<<"Address of integral pointer before deleting it is: "<<integral.get()<< " from here on avoid to refer to it to avoid undefined behaviour"<<std::endl;
@@ -90,11 +91,21 @@ int main()
     //Undefined behaviour, it doesn't cause SEG_FAULT, we have a dandling pointer here
     //std::cout<<"Value of integral after deletion is: "<<*integral<<std::endl;
 
-    std::cout << "Num references of integral after removing naked pointer and before calling reset still is: "<< integral.use_count()<<std::endl;
+    std::cout << "Num references of integral after removing naked pointer and before calling reset still is: "<< integral.use_count()<<", internal anked pointer address is still"<<integral<<std::endl;
 
+    //Reset delete the inner naked pointer and sets the shared pointer address to nullptr
     integral.reset();
 
     std::cout << "Num references of integral after removing naked pointer and after calling reset is: "<< integral.use_count()<<std::endl;
+    std::cout << "After reset the address of value pointed by integral is a nullptr? "<<(integral==nullptr? "true":"false")<<std::endl;
+
+    std::cout<<"\nUC"<<count++<<"  - using twice make_shared without reset:"<<std::endl;
+    test1.reset();
+    test1 = std::make_shared<Foo>(3);
+    std::cout<<"\nValue of Foo is: "<<test1->f<<std::endl;
+    test1 = std::make_shared<Foo>(7);
+    std::cout<<"Value of Foo after a new make_shared is: "<<test1->f<<std::endl;
+
 
     return 0;
 }
