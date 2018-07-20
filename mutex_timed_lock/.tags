@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/6f7654b/
+func1	./lockd.c	/^void * func1(){$/;"	f	typeref:typename:void *
+func1	./lockd.cpp	/^void  func1(){$/;"	f	typeref:typename:void
+func1	lockd.cpp	/^void  *func1(){$/;"	f	typeref:typename:void *
+func2	./lockd.c	/^void * func2() {$/;"	f	typeref:typename:void *
+func2	./lockd.cpp	/^void  func2() {$/;"	f	typeref:typename:void
+func2	lockd.cpp	/^void  *func2() {$/;"	f	typeref:typename:void *
+main	./lockd.c	/^main() {$/;"	f
+main	./lockd.cpp	/^int main() {$/;"	f	typeref:typename:int
+main	lockd.cpp	/^int main() {$/;"	f	typeref:typename:int
+mutex1	./lockd.c	/^pthread_mutex_t mutex1,mutex2;$/;"	v	typeref:typename:pthread_mutex_t
+mutex2	./lockd.c	/^pthread_mutex_t mutex1,mutex2;$/;"	v	typeref:typename:pthread_mutex_t
+perror	./lockd.c	/^#define perror(/;"	d	file:
+perror	./lockd.cpp	/^#define perror(/;"	d	file:
+perror	lockd.cpp	/^#define perror(/;"	d	file:
+temp	./lockd.c	/^int temp;$/;"	v	typeref:typename:int
