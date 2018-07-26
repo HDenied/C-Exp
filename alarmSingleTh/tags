@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/6f7654b/
+DBG_LOCK	./alarm.c	/^#define DBG_LOCK(/;"	d	file:
+DBG_Lock	./alarm.c	/^static void DBG_Lock(const char *filename, const char* funcname, unsigned int line)$/;"	f	typeref:typename:void	file:
+NUM_THREAD	./alarm.c	/^#define NUM_THREAD /;"	d	file:
+TIMEOUT_SEC	./alarm.c	/^#define TIMEOUT_SEC /;"	d	file:
+TIMEOUT_SEC	alarm.c	/^#define TIMEOUT_SEC /;"	d	file:
+alarm_isr	./alarm.c	/^static void alarm_isr(int sig)$/;"	f	typeref:typename:void	file:
+alarm_isr	alarm.c	/^static void alarm_isr(int sig)$/;"	f	typeref:typename:void	file:
+getTime	./alarm.c	/^static uint32_t getTime()$/;"	f	typeref:typename:uint32_t	file:
+main	./alarm.c	/^int main()$/;"	f	typeref:typename:int
+main	alarm.c	/^int main()$/;"	f	typeref:typename:int
+main_id	./alarm.c	/^static pthread_t main_id;$/;"	v	typeref:typename:pthread_t	file:
+mutex	./alarm.c	/^static pthread_mutex_t mutex;$/;"	v	typeref:typename:pthread_mutex_t	file:
+th1	./alarm.c	/^static pthread_t th1;$/;"	v	typeref:typename:pthread_t	file:
+th1	alarm.c	/^static pthread_t th1;$/;"	v	typeref:typename:pthread_t	file:
+thFunc	./alarm.c	/^static void * thFunc(void *arg){$/;"	f	typeref:typename:void *	file:
+timeout	./alarm.c	/^static struct timespec timeout={TIMEOUT_SEC,0};$/;"	v	typeref:struct:timespec	file:
+timeout	alarm.c	/^static struct timespec timeout={TIMEOUT_SEC,0};$/;"	v	typeref:struct:timespec	file:
+timestamp	./alarm.c	/^static volatile sig_atomic_t timestamp;$/;"	v	typeref:typename:volatile sig_atomic_t	file:
+timestamp	alarm.c	/^static volatile sig_atomic_t timestamp;$/;"	v	typeref:typename:volatile sig_atomic_t	file:
+uint32_t	./alarm.c	/^typedef unsigned int uint32_t;$/;"	t	typeref:typename:unsigned int	file:
+uint32_t	alarm.c	/^typedef unsigned int uint32_t;$/;"	t	typeref:typename:unsigned int	file:

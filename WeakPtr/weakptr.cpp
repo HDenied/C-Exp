@@ -33,19 +33,43 @@ private:
         uint32_t m_val;
         uint32_t m_ctr;
 
+
+        weak_ptr<Nodo> weak_prv;
+
         Nodo(){};
 
 public:
-        shared_ptr<Nodo> shared_prv;
-        shared_ptr<Nodo> shared_nxt;
 
-        weak_ptr<Nodo> weak_prv;
-        weak_ptr<Nodo> weak_nxt;
-	uint32_t getVal() {return m_val;}
+        shared_ptr<Nodo> shared_nxt;
+        bool insert(uint32_t val);
+        weak_ptr<Nodo> find(uint32_t val, uint32_t pos);
+	    uint32_t getVal() {return m_val;}
         static void init() {Nodo::node_ctr=0;}
         static uint32_t getGlobCtr() {return Nodo::node_ctr;}
 
 };
+
+weak_ptr<Nodo> find(uint32_t val, uint32_t &pos)
+{
+        weak_ptr<Nodo> res;
+
+        return res;
+}
+
+
+bool Nodo::insert(uint32_t val)
+{
+        if(weak_root.lock() != nullptr)
+        {
+        }
+        else
+        {
+
+
+        }
+
+        return true;
+}
 
 uint32_t Nodo::node_ctr;
 
@@ -57,7 +81,7 @@ int main()
         {
                 cout<<"Static variable default value is: "<<Nodo::getGlobCtr()<<endl;
                 Nodo testNode=Nodo(12);
-                cout<<"Default value of shared pointer is nullptr: "<<(testNode.shared_prv==nullptr? "true":"false")<<endl;
+                cout<<"Default value of shared pointer is nullptr: "<<(testNode.shared_nxt==nullptr? "true":"false")<<endl;
         }
 
         Nodo::init();
